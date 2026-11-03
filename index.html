@@ -563,7 +563,9 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
   // ---------- Música ----------
   var audio = document.getElementById("audio");
   var btnMusica = document.getElementById("musica");
-  audio.addEventListener("loadedmetadata", function(){ btnMusica.hidden = false; });
+  // La nota siempre se ve; solo se oculta si la canción no se puede cargar
+  btnMusica.hidden = false;
+  audio.addEventListener("error", function(){ btnMusica.hidden = true; });
   btnMusica.addEventListener("click", function(){
     if (audio.paused){ audio.play().catch(function(){}); btnMusica.setAttribute("aria-pressed","true"); }
     else { audio.pause(); btnMusica.setAttribute("aria-pressed","false"); }
