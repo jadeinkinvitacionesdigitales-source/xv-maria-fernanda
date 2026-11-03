@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Una noche en Nueva York · Sábado 30 de enero de 2027 · The Lounge">
+<meta name="description" content="Una noche en Nueva York Â· SÃ¡bado 30 de enero de 2027 Â· The Lounge">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jadeinkinvitacionesdigitales-source.github.io/xv-maria-fernanda/">
-<meta property="og:title" content="Mis XV Años · María Fernanda">
-<meta property="og:description" content="Una noche en Nueva York · Sábado 30 de enero de 2027 · The Lounge">
+<meta property="og:title" content="Mis XV AÃ±os Â· MarÃ­a Fernanda">
+<meta property="og:description" content="Una noche en Nueva York Â· SÃ¡bado 30 de enero de 2027 Â· The Lounge">
 <meta property="og:image" content="https://jadeinkinvitacionesdigitales-source.github.io/xv-maria-fernanda/assets/portada.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -15,22 +15,26 @@
 <title>XV María Fernanda</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="google" content="notranslate">
-<meta name="theme-color" content="#140819">
+<meta name="theme-color" content="#120a2e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* Una columna tipo celular: noche en Nueva York, letreros de calle como títulos y luces neón rosa */
+/* Una columna tipo celular: atardecer en Nueva York (índigo, morado, coral y luces doradas), letreros de calle como títulos */
 :root{
   color-scheme:dark;
-  --noche:#140819;
-  --ciruela:#3b0d2e;
-  --violeta:#5b2387;
-  --fucsia:#ff2e93;
-  --rosa:#f7a8cf;
-  --perla:#fbe9f2;
-  --suave:#d9b9cc;
-  --linea:rgba(247,168,207,.28);
+  --noche:#120a2e;
+  --indigo:#251763;
+  --violeta:#8a4dff;
+  --lavanda:#c9a8ff;
+  --fucsia:#ff3fa4;
+  --coral:#ff8a6b;
+  --dorado:#ffc76b;
+  --perla:#fbf3ff;
+  --suave:#cfc2ea;
+  --linea:rgba(201,168,255,.32);
+  --atardecer:linear-gradient(100deg,#c9a8ff 0%,#ff8fd0 50%,#ffb48a 100%);
+  --boton:linear-gradient(100deg,#7b4dff 0%,#ff3fa4 60%,#ff8a6b 100%);
   --script:"Great Vibes","Brush Script MT",cursive;
   --serif:"Cinzel","Times New Roman",serif;
   --texto:"Montserrat","Segoe UI",system-ui,sans-serif;
@@ -46,10 +50,14 @@ img{max-width:100%;display:block}
 h1,h2,h3,p{margin:0}
 a{color:inherit}
 
-/* ---------- Fondo fijo: Nueva York de noche ---------- */
+/* ---------- Fondo fijo: Nueva York de noche, con cielo morado y horizonte cálido ---------- */
 .fondo{
-  position:fixed;inset:0;z-index:-1;
+  position:fixed;inset:0;z-index:-1;isolation:isolate;
   background:var(--noche) url("assets/fondo.webp") center 62%/cover no-repeat;
+}
+.fondo::after{
+  content:"";position:absolute;inset:0;mix-blend-mode:color;opacity:.5;
+  background:linear-gradient(180deg,#4a2fd0 0%,#8a4dff 34%,#ff4fa8 58%,#ff8a5c 72%,#3b22a8 100%);
 }
 
 /* ---------- Portada ---------- */
@@ -63,22 +71,22 @@ a{color:inherit}
   display:flex;flex-direction:column;align-items:center;gap:6px;
 }
 .marquesina{
-  font-family:var(--serif);letter-spacing:.32em;font-size:12px;text-transform:uppercase;color:var(--perla);
-  text-shadow:0 0 6px rgba(20,8,25,.9),0 0 14px rgba(20,8,25,.8);
+  font-family:var(--serif);letter-spacing:.32em;font-size:12px;text-transform:uppercase;color:var(--dorado);
+  text-shadow:0 0 6px rgba(18,10,46,.9),0 0 14px rgba(18,10,46,.8);
 }
-.tiara{width:min(46%,190px);margin-top:10px;margin-bottom:-10px;filter:drop-shadow(0 0 8px rgba(255,46,147,.6))}
-/* XV en rosa perla brillante, como el de la imagen de referencia */
+.tiara{width:min(46%,190px);margin-top:10px;margin-bottom:-10px;filter:drop-shadow(0 0 8px rgba(201,168,255,.8))}
+/* XV perlado, con brillo morado y rosa */
 .xv{
   font-family:var(--serif);font-weight:600;font-size:clamp(84px,27vw,132px);line-height:1;letter-spacing:.02em;
-  background:linear-gradient(115deg,#ffffff 0%,#f6bfd9 20%,#fff4fa 36%,#e48db6 52%,#ffffff 66%,#f2b0cf 84%,#fde3ef 100%);
+  background:linear-gradient(115deg,#ffffff 0%,#e3d2ff 20%,#fff6fb 36%,#f2a6d0 52%,#ffffff 66%,#ffd2b8 84%,#f1e6ff 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 0 3px rgba(255,255,255,.7)) drop-shadow(0 0 12px rgba(255,46,147,.85)) drop-shadow(0 0 30px rgba(255,46,147,.5));
+  filter:drop-shadow(0 0 3px rgba(255,255,255,.7)) drop-shadow(0 0 12px rgba(138,77,255,.9)) drop-shadow(0 0 30px rgba(255,63,164,.5));
 }
-.adorno{width:min(64%,260px);margin-top:-4px;filter:drop-shadow(0 0 6px rgba(255,46,147,.6))}
+.adorno{width:min(64%,260px);margin-top:-4px;filter:drop-shadow(0 0 6px rgba(201,168,255,.7))}
 .nombre{
   font-family:var(--script);font-weight:400;
-  font-size:clamp(50px,15vw,80px);line-height:1.05;color:var(--rosa);
-  text-shadow:0 0 10px rgba(255,46,147,.65),0 0 30px rgba(255,46,147,.4);
+  font-size:clamp(50px,15vw,80px);line-height:1.05;color:#ffd9f0;
+  text-shadow:0 0 10px rgba(138,77,255,.8),0 0 30px rgba(255,63,164,.45);
   animation:encender 2.2s ease-out 1;
 }
 @keyframes encender{0%{opacity:.35}8%{opacity:1}12%{opacity:.4}18%{opacity:1}24%{opacity:.6}30%,100%{opacity:1}}
@@ -88,14 +96,14 @@ a{color:inherit}
   font-family:var(--serif);color:var(--perla);
 }
 .fecha-linea span{border-block:1px solid var(--linea);padding:6px 0;font-size:14px;letter-spacing:.22em}
-.fecha-linea b{font-size:44px;font-weight:600;line-height:1;color:var(--perla);text-shadow:0 0 14px rgba(255,46,147,.6)}
-.dia-semana{font-family:var(--serif);letter-spacing:.3em;font-size:12px;color:var(--suave);margin-top:2px}
+.fecha-linea b{font-size:44px;font-weight:600;line-height:1;color:var(--dorado);text-shadow:0 0 14px rgba(255,199,107,.6)}
+.dia-semana{font-family:var(--serif);letter-spacing:.3em;font-size:12px;color:var(--perla);margin-top:2px;text-shadow:0 0 8px rgba(18,10,46,.9)}
 
 /* ---------- Estructura ---------- */
-/* Velo oscuro sobre el fondo para que el texto se lea bien */
+/* Velo índigo sobre el fondo para que el texto se lea bien */
 .columna{
   max-width:520px;margin:0 auto;
-  background:linear-gradient(180deg,rgba(20,8,25,0) 0,rgba(20,8,25,.84) 160px);
+  background:linear-gradient(180deg,rgba(18,10,46,0) 0,rgba(18,10,46,.86) 160px);
   padding-left:max(16px,env(safe-area-inset-left,0px));
   padding-right:max(16px,env(safe-area-inset-right,0px));
 }
@@ -103,93 +111,95 @@ a{color:inherit}
 .letrero{
   display:inline-flex;align-items:center;gap:10px;
   font-family:var(--letrero);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:13px;
-  color:var(--perla);background:var(--ciruela);
-  border:2px solid var(--rosa);border-radius:4px;padding:5px 14px;
-  box-shadow:0 0 0 3px var(--noche),0 0 0 4px var(--linea),0 0 18px rgba(255,46,147,.35);
+  color:var(--perla);background:var(--indigo);
+  border:2px solid var(--lavanda);border-radius:4px;padding:5px 14px;
+  box-shadow:0 0 0 3px var(--noche),0 0 0 4px var(--linea),0 0 18px rgba(138,77,255,.45);
 }
-.letrero small{font-size:10px;letter-spacing:.1em;color:var(--rosa);border-left:1px solid var(--linea);padding-left:10px}
-.titulo{font-family:var(--script);font-weight:400;font-size:46px;line-height:1.1;color:var(--rosa);text-wrap:balance}
+.letrero small{font-size:10px;letter-spacing:.1em;color:var(--dorado);border-left:1px solid var(--linea);padding-left:10px}
+.titulo{
+  font-family:var(--script);font-weight:400;font-size:46px;line-height:1.15;text-wrap:balance;
+  background:var(--atardecer);-webkit-background-clip:text;background-clip:text;color:transparent;
+  padding-inline:.1em;
+}
 .parrafo{max-width:38ch;color:var(--suave);text-wrap:pretty}
 .boton{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   font-family:var(--letrero);text-transform:uppercase;letter-spacing:.16em;font-size:14px;font-weight:600;
-  text-decoration:none;color:var(--noche);background:var(--fucsia);
+  text-decoration:none;color:#fff;background:var(--boton);
   border:0;border-radius:999px;padding:12px 26px;cursor:pointer;
-  box-shadow:0 0 16px rgba(255,46,147,.55);
+  box-shadow:0 0 18px rgba(138,77,255,.55);
   transition:transform .15s ease,box-shadow .15s ease;
 }
-.boton:hover{transform:translateY(-1px);box-shadow:0 0 26px rgba(255,46,147,.8)}
-.boton.contorno{background:transparent;color:var(--rosa);border:1.5px solid var(--rosa);box-shadow:none}
-.boton:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--perla);outline-offset:3px}
+.boton:hover{transform:translateY(-1px);box-shadow:0 0 28px rgba(255,63,164,.7)}
+.boton:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
 .boton svg{width:18px;height:18px;fill:currentColor}
 
 /* ---------- Fotos ---------- */
 .foto{
   position:relative;overflow:hidden;
   background:
-    repeating-linear-gradient(135deg,rgba(247,168,207,.05) 0 10px,transparent 10px 20px),
-    linear-gradient(180deg,var(--ciruela),#22091c);
-  border:1.5px solid var(--rosa);
-  box-shadow:0 0 0 4px var(--noche),0 0 0 5px var(--linea),0 0 24px rgba(255,46,147,.35);
+    repeating-linear-gradient(135deg,rgba(201,168,255,.06) 0 10px,transparent 10px 20px),
+    linear-gradient(180deg,var(--indigo),#170d3d);
+  border:1.5px solid var(--lavanda);
+  box-shadow:0 0 0 4px var(--noche),0 0 0 5px var(--linea),0 0 26px rgba(138,77,255,.45);
   display:flex;align-items:center;justify-content:center;
 }
 .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.foto .vacia{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--rosa);font-family:var(--letrero);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+.foto .vacia{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--lavanda);font-family:var(--letrero);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
 .foto .vacia svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.5}
 .foto-principal{width:min(100%,360px);aspect-ratio:3/4;border-radius:180px 180px 10px 10px}
 /* Fotos sueltas repartidas entre las secciones */
 .foto-suelta{margin:0;padding-top:52px;display:flex;justify-content:center}
 .foto-suelta .foto{width:min(86%,340px);aspect-ratio:4/5;border-radius:8px}
-.foto-suelta.ancha .foto{width:100%;aspect-ratio:16/10}
 .foto-suelta.arco .foto{border-radius:170px 170px 10px 10px}
 .foto-suelta.polaroid .foto{
   transform:rotate(var(--giro,0deg));border-radius:3px;
   border:10px solid var(--perla);border-bottom-width:40px;
-  box-shadow:0 0 0 1px var(--linea),0 0 30px rgba(255,46,147,.4);
+  box-shadow:0 0 0 1px var(--linea),0 0 30px rgba(255,138,107,.4);
 }
-.frase-galeria{font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:var(--perla);text-wrap:balance;max-width:24ch;text-shadow:0 0 12px rgba(255,46,147,.45)}
+.frase-galeria{font-family:var(--serif);font-size:18px;letter-spacing:.06em;color:var(--perla);text-wrap:balance;max-width:24ch;text-shadow:0 0 12px rgba(138,77,255,.6)}
 
 /* ---------- Cuenta regresiva (tablero de Times Square) ---------- */
 .tablero{
   display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;
-  background:#0c0410;border:1px solid var(--linea);border-radius:10px;padding:16px 10px;
-  background-image:radial-gradient(rgba(247,168,207,.10) 1px,transparent 1.2px);background-size:6px 6px;
+  background:#0b0620;border:1px solid var(--linea);border-radius:10px;padding:16px 10px;
+  background-image:radial-gradient(rgba(255,199,107,.10) 1px,transparent 1.2px);background-size:6px 6px;
 }
 .tablero b{
   display:block;font-family:var(--letrero);font-weight:400;font-size:clamp(34px,10vw,46px);line-height:1;
-  color:var(--fucsia);font-variant-numeric:tabular-nums;
-  text-shadow:0 0 8px rgba(255,46,147,.9),0 0 20px rgba(255,46,147,.5);
+  color:var(--dorado);font-variant-numeric:tabular-nums;
+  text-shadow:0 0 8px rgba(255,199,107,.9),0 0 20px rgba(255,138,107,.5);
 }
-.tablero span{display:block;margin-top:6px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--suave)}
+.tablero span{display:block;margin-top:6px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--lavanda)}
 
-/* ---------- Boleto de Broadway ---------- */
+/* ---------- Boleto de Broadway (cielo de atardecer) ---------- */
 .boleto{
   position:relative;width:100%;
   display:grid;grid-template-columns:1fr 112px;
-  background:linear-gradient(135deg,var(--perla),var(--rosa));color:var(--ciruela);
+  background:linear-gradient(135deg,#efe4ff 0%,#ffd3ea 55%,#ffd9c4 100%);color:var(--indigo);
   border-radius:12px;text-align:left;
-  box-shadow:0 0 30px rgba(255,46,147,.35);
+  box-shadow:0 0 30px rgba(138,77,255,.45);
 }
 .boleto-cuerpo{padding:20px 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.boleto-encabezado{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-family:var(--letrero);letter-spacing:.16em;font-size:11px;text-transform:uppercase}
-.boleto h3{font-family:var(--serif);font-size:22px;line-height:1.2;font-weight:600;color:var(--ciruela)}
+.boleto-encabezado{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-family:var(--letrero);letter-spacing:.16em;font-size:11px;text-transform:uppercase;color:#6a3fd6}
+.boleto h3{font-family:var(--serif);font-size:22px;line-height:1.2;font-weight:600;color:var(--indigo)}
 .dato{display:grid;grid-template-columns:72px 1fr;gap:8px;font-size:14px;line-height:1.4}
-.dato dt{font-family:var(--letrero);text-transform:uppercase;letter-spacing:.14em;font-size:11px;padding-top:2px;color:#7a2a5c}
+.dato dt{font-family:var(--letrero);text-transform:uppercase;letter-spacing:.14em;font-size:11px;padding-top:2px;color:#7a45d8}
 .dato dd{margin:0;font-weight:600}
 .boleto dl{margin:0;display:flex;flex-direction:column;gap:6px}
 .talon{
-  border-left:2px dashed rgba(59,13,46,.4);
+  border-left:2px dashed rgba(37,23,99,.35);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
   font-family:var(--letrero);text-transform:uppercase;text-align:center;padding:14px 8px;
 }
 .talon .admit{font-size:11px;letter-spacing:.2em}
 .talon .num{font-size:40px;line-height:1;font-weight:600}
 .talon .mes{font-size:13px;letter-spacing:.2em}
-.talon .hora{margin-top:8px;font-size:12px;letter-spacing:.1em;background:var(--ciruela);color:var(--perla);border-radius:4px;padding:3px 8px}
+.talon .hora{margin-top:8px;font-size:12px;letter-spacing:.1em;background:var(--indigo);color:var(--dorado);border-radius:4px;padding:3px 8px}
 
 /* ---------- Dress code ---------- */
 .muestras{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.muestra{width:54px;height:54px;border-radius:50%;border:2px solid var(--perla);box-shadow:0 0 14px rgba(255,46,147,.45)}
+.muestra{width:54px;height:54px;border-radius:50%;border:2px solid var(--perla);box-shadow:0 0 14px rgba(255,63,164,.45)}
 .brillo{
   background:
     radial-gradient(circle at 30% 30%,#fff 0 1.5px,transparent 2px),
@@ -198,53 +208,49 @@ a{color:inherit}
     radial-gradient(circle at 62% 25%,#ffd6ea 0 1.4px,transparent 2px),
     #e8559f;
 }
-.etiqueta-grande{font-family:var(--serif);font-size:26px;letter-spacing:.16em;color:var(--perla);text-shadow:0 0 14px rgba(255,46,147,.5)}
-.nota{font-family:var(--serif);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rosa)}
+.etiqueta-grande{font-family:var(--serif);font-size:26px;letter-spacing:.16em;color:var(--dorado);text-shadow:0 0 14px rgba(255,199,107,.45)}
+.nota{font-family:var(--serif);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--lavanda)}
 
 /* ---------- Formularios ---------- */
 .tarjeta{
   width:100%;text-align:left;
-  background:rgba(59,13,46,.55);border:1px solid var(--linea);border-radius:14px;padding:20px 18px;
+  background:rgba(37,23,99,.55);border:1px solid var(--linea);border-radius:14px;padding:20px 18px;
   display:flex;flex-direction:column;gap:14px;
 }
 .campo{display:flex;flex-direction:column;gap:6px}
-.campo label{font-family:var(--letrero);text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--rosa)}
-input,select,textarea{
-  font:inherit;color:var(--perla);background:rgba(20,8,25,.8);
+.campo label{font-family:var(--letrero);text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--dorado)}
+input,select{
+  font:inherit;color:var(--perla);background:rgba(11,6,32,.8);
   border:1px solid var(--linea);border-radius:8px;padding:11px 12px;width:100%;
 }
-textarea{min-height:110px;resize:vertical}
-input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
+input::placeholder{color:rgba(207,194,234,.55)}
 .opciones{display:flex;gap:10px;flex-wrap:wrap}
 .opciones label{
   flex:1 1 140px;display:flex;align-items:center;gap:8px;cursor:pointer;
   border:1px solid var(--linea);border-radius:8px;padding:10px 12px;
   font-family:var(--texto);text-transform:none;letter-spacing:0;font-size:14px;color:var(--perla);
 }
-.opciones input{width:auto;accent-color:var(--fucsia)}
+.opciones input{width:auto;accent-color:var(--violeta)}
 .acciones{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.correo{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--suave)}
-.correo code{font-family:var(--texto);color:var(--perla);user-select:all;word-break:break-all}
-.copiar{font:inherit;font-size:12px;color:var(--rosa);background:none;border:1px solid var(--linea);border-radius:999px;padding:4px 12px;cursor:pointer}
-.aviso{font-size:13px;color:var(--rosa);min-height:1.2em}
+.aviso{font-size:13px;color:var(--dorado);min-height:1.2em}
 
 /* ---------- Regalos ---------- */
-.bolsa{width:84px;height:auto;filter:drop-shadow(0 0 12px rgba(255,46,147,.5))}
+.bolsa{width:84px;height:auto;filter:drop-shadow(0 0 12px rgba(138,77,255,.6))}
 
 /* ---------- Pie ---------- */
 .pie{padding-block:64px 90px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
 .pie p{font-family:var(--serif);letter-spacing:.2em;font-size:12px;text-transform:uppercase;color:var(--suave)}
-.pie p.nombre{font-family:var(--script);font-size:clamp(44px,14vw,60px);letter-spacing:0;text-transform:none;color:var(--rosa)}
-.separador{width:140px;height:1px;background:linear-gradient(90deg,transparent,var(--rosa),transparent)}
+.pie p.nombre{font-family:var(--script);font-size:clamp(44px,14vw,60px);letter-spacing:0;text-transform:none;color:#ffd9f0}
+.separador{width:140px;height:1px;background:linear-gradient(90deg,transparent,var(--dorado),transparent)}
 
 /* ---------- Música ---------- */
 .musica{
   position:fixed;z-index:20;
   right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));
-  display:flex;align-items:center;gap:8px;
-  font-family:var(--letrero);text-transform:uppercase;letter-spacing:.12em;font-size:12px;
-  color:var(--perla);background:rgba(59,13,46,.92);border:1.5px solid var(--fucsia);border-radius:999px;
-  width:50px;height:50px;padding:0;justify-content:center;cursor:pointer;box-shadow:0 0 18px rgba(255,46,147,.5);
+  display:flex;align-items:center;justify-content:center;
+  width:50px;height:50px;padding:0;cursor:pointer;
+  color:var(--dorado);background:rgba(37,23,99,.92);border:1.5px solid var(--lavanda);border-radius:999px;
+  box-shadow:0 0 18px rgba(138,77,255,.6);
 }
 .musica svg{width:22px;height:22px;fill:currentColor}
 .musica[aria-pressed="true"] svg{animation:latido 1.2s ease-in-out infinite}
@@ -259,11 +265,11 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
   .boleto h3{font-size:20px}
   .dato{grid-template-columns:66px 1fr}
   .boleto{grid-template-columns:1fr}
-  .talon{border-left:0;border-top:2px dashed rgba(59,13,46,.4);flex-direction:row;gap:10px;flex-wrap:wrap}
+  .talon{border-left:0;border-top:2px dashed rgba(37,23,99,.35);flex-direction:row;gap:10px;flex-wrap:wrap}
   .talon .hora{margin-top:0}
 }
 @media (prefers-reduced-motion:reduce){
-  .nombre{animation:none}
+  .nombre,.musica[aria-pressed="true"] svg{animation:none}
   .boton{transition:none}
 }
 </style>
@@ -308,8 +314,6 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
     </div>
   </section>
 
-  <figure class="foto-suelta polaroid" style="--giro:-3deg"><div class="foto" data-foto="1" role="img" aria-label="Foto de María Fernanda"></div></figure>
-
   <!-- ============ CUÁNDO Y DÓNDE ============ -->
   <section class="seccion" aria-labelledby="t-fiesta">
     <span class="letrero">Broadway <small>La fiesta</small></span>
@@ -338,7 +342,7 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
     </a>
   </section>
 
-  <figure class="foto-suelta ancha"><div class="foto" data-foto="2" role="img" aria-label="Foto de María Fernanda"></div></figure>
+  <figure class="foto-suelta polaroid" style="--giro:-3deg"><div class="foto" data-foto="1" role="img" aria-label="Foto de María Fernanda"></div></figure>
 
   <!-- ============ DRESS CODE ============ -->
   <section class="seccion" aria-labelledby="t-vestimenta">
@@ -354,8 +358,6 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
     <p class="nota">Los tonos rosa están reservados para la quinceañera</p>
   </section>
 
-  <figure class="foto-suelta polaroid" style="--giro:3deg"><div class="foto" data-foto="3" role="img" aria-label="Foto de María Fernanda"></div></figure>
-
   <!-- ============ GALERÍA DE FOTOS ============ -->
   <section class="seccion" aria-labelledby="t-galeria">
     <span class="letrero">Soho <small>Fotos</small></span>
@@ -368,21 +370,19 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
     </a>
   </section>
 
-  <figure class="foto-suelta ancha"><div class="foto" data-foto="4" role="img" aria-label="Foto de María Fernanda"></div></figure>
-
   <!-- ============ REGALOS ============ -->
   <section class="seccion" aria-labelledby="t-regalos">
     <span class="letrero">Madison Ave <small>Regalos</small></span>
     <svg class="bolsa" viewBox="0 0 80 96" aria-hidden="true">
-      <path d="M26 30 V22 a14 14 0 0 1 28 0 V30" fill="none" stroke="#fbe9f2" stroke-width="4"/>
-      <path d="M10 30 H70 L74 92 H6 Z" fill="#e8559f"/>
-      <path d="M40 72 c-8-6-13-10-13-15a6 6 0 0 1 13-2a6 6 0 0 1 13 2c0 5-5 9-13 15z" fill="#3b0d2e"/>
+      <path d="M26 30 V22 a14 14 0 0 1 28 0 V30" fill="none" stroke="#ffc76b" stroke-width="4"/>
+      <path d="M10 30 H70 L74 92 H6 Z" fill="#8a4dff"/>
+      <path d="M40 72 c-8-6-13-10-13-15a6 6 0 0 1 13-2a6 6 0 0 1 13 2c0 5-5 9-13 15z" fill="#ffd9f0"/>
     </svg>
     <h2 class="titulo" id="t-regalos">Mesa de regalos</h2>
     <p class="parrafo">Tu presencia es mi mejor regalo. Si deseas tener un detalle conmigo, el día de la fiesta habrá lluvia de sobres.</p>
   </section>
 
-  <figure class="foto-suelta polaroid" style="--giro:-2deg"><div class="foto" data-foto="5" role="img" aria-label="Foto de María Fernanda"></div></figure>
+  <figure class="foto-suelta arco"><div class="foto" data-foto="2" role="img" aria-label="Foto de María Fernanda"></div></figure>
 
   <!-- ============ PLAYLIST ============ -->
   <section class="seccion" aria-labelledby="t-playlist">
@@ -391,34 +391,13 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
     <div class="tarjeta">
       <div class="campo">
         <label for="cancion">Canción y artista</label>
-        <input id="cancion" type="text" placeholder="Ej. Empire State of Mind, Jay-Z y Alicia Keys" autocomplete="off">
+        <input id="cancion" type="text" placeholder="Ej. Empire State of Mind, Alicia Keys" autocomplete="off">
       </div>
       <div class="acciones">
         <a class="boton" id="enviar-cancion" href="#" target="_blank" rel="noopener">Sugerir canción</a>
       </div>
     </div>
   </section>
-
-  <!-- ============ MENSAJE ============ -->
-  <section class="seccion" aria-labelledby="t-mensaje">
-    <span class="letrero">Central Park <small>Mensajes</small></span>
-    <h2 class="titulo" id="t-mensaje">Déjale un mensaje a María Fernanda</h2>
-    <div class="tarjeta">
-      <div class="campo">
-        <label for="mensaje-nombre">Tu nombre</label>
-        <input id="mensaje-nombre" type="text" autocomplete="name">
-      </div>
-      <div class="campo">
-        <label for="mensaje-texto">Tu mensaje</label>
-        <textarea id="mensaje-texto" placeholder="Escribe unas palabras para la quinceañera"></textarea>
-      </div>
-      <div class="acciones">
-        <a class="boton" id="enviar-mensaje" href="#" target="_blank" rel="noopener">Enviar mensaje</a>
-      </div>
-    </div>
-  </section>
-
-  <figure class="foto-suelta arco"><div class="foto" data-foto="6" role="img" aria-label="Foto de María Fernanda"></div></figure>
 
   <!-- ============ CONFIRMAR ASISTENCIA ============ -->
   <section class="seccion" aria-labelledby="t-rsvp">
@@ -460,9 +439,9 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
   </footer>
 </main>
 
-<!-- Música: se muestra solo cuando el archivo cancion.mp3 existe junto a la página -->
+<!-- Música: la nota se oculta solo si cancion.mp3 no se puede cargar -->
 <audio id="audio" src="cancion.mp3" preload="metadata" loop></audio>
-<button class="musica" id="musica" type="button" hidden aria-pressed="false" aria-label="Música: Empire State of Mind">
+<button class="musica" id="musica" type="button" hidden aria-pressed="false" aria-label="Música: Empire State of Mind, Alicia Keys">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3v10.6A4 4 0 1 0 11 17V7h6V3z"/></svg>
 </button>
 
@@ -471,7 +450,7 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
   // ---------- Fotos: pon aquí el nombre del archivo de cada foto ----------
   var FOTOS = {
     principal: "",
-    galeria: ["", "", "", "", "", ""]
+    galeria: ["", ""]
   };
 
   var WHATSAPP = "50769974343";
@@ -483,7 +462,7 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
     if (src) el.innerHTML = '<img src="' + src + '" alt="">';
     else el.innerHTML = '<div class="vacia">' + camara + etiqueta + '</div>';
   }
-  // Cada espacio data-foto="1"…"6" usa la foto de la misma posición en FOTOS.galeria
+  // Cada espacio data-foto="1" y "2" usa la foto de la misma posición en FOTOS.galeria
   document.querySelectorAll("[data-foto]").forEach(function(el){
     var k = el.dataset.foto;
     if (k === "principal") llenar(el, FOTOS.principal, "Foto principal");
@@ -509,21 +488,12 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
   }
   tic(); setInterval(tic, 1000);
 
-  // ---------- Enlaces de WhatsApp y correo ----------
+  // ---------- Enlaces de WhatsApp ----------
   function wa(texto){ return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto); }
   var cancion = document.getElementById("cancion");
   var btnCancion = document.getElementById("enviar-cancion");
   function actCancion(){ btnCancion.href = wa("Hola, para la playlist de los XV de María Fernanda sugiero: " + (cancion.value.trim() || "…")); }
   cancion.addEventListener("input", actCancion); actCancion();
-
-  var mNombre = document.getElementById("mensaje-nombre");
-  var mTexto = document.getElementById("mensaje-texto");
-  var btnMensaje = document.getElementById("enviar-mensaje");
-  function actMensaje(){
-    var firma = mNombre.value.trim() ? "\n\n— " + mNombre.value.trim() : "";
-    btnMensaje.href = wa("Mensaje para María Fernanda:\n" + (mTexto.value.trim() || "…") + firma);
-  }
-  mNombre.addEventListener("input", actMensaje); mTexto.addEventListener("input", actMensaje); actMensaje();
 
   // ---------- Pase personal: nombre y puestos desde el enlace del panel ----------
   // Ejemplo de enlace: ...?invitado=Familia%20Pérez&puestos=4
