@@ -244,9 +244,11 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
   display:flex;align-items:center;gap:8px;
   font-family:var(--letrero);text-transform:uppercase;letter-spacing:.12em;font-size:12px;
   color:var(--perla);background:rgba(59,13,46,.92);border:1.5px solid var(--fucsia);border-radius:999px;
-  padding:10px 16px;cursor:pointer;box-shadow:0 0 18px rgba(255,46,147,.5);
+  width:50px;height:50px;padding:0;justify-content:center;cursor:pointer;box-shadow:0 0 18px rgba(255,46,147,.5);
 }
-.musica svg{width:16px;height:16px;fill:currentColor}
+.musica svg{width:22px;height:22px;fill:currentColor}
+.musica[aria-pressed="true"] svg{animation:latido 1.2s ease-in-out infinite}
+@keyframes latido{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
 .musica[hidden]{display:none}
 
 @media (max-width:400px){
@@ -460,9 +462,8 @@ input::placeholder,textarea::placeholder{color:rgba(217,185,204,.55)}
 
 <!-- Música: se muestra solo cuando el archivo cancion.mp3 existe junto a la página -->
 <audio id="audio" src="cancion.mp3" preload="metadata" loop></audio>
-<button class="musica" id="musica" type="button" hidden aria-pressed="false">
+<button class="musica" id="musica" type="button" hidden aria-pressed="false" aria-label="Música: Empire State of Mind">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3v10.6A4 4 0 1 0 11 17V7h6V3z"/></svg>
-  <span id="musica-texto">Empire State of Mind</span>
 </button>
 
 <script>
