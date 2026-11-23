@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es" translate="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Panel XV María Fernanda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#120a2e; --indigo:#251763; --panel:#1b1142; --linea:rgba(201,168,255,.22);
+  --violeta:#8a4dff; --lavanda:#c9a8ff; --fucsia:#ff3fa4; --coral:#ff8a6b; --dorado:#ffc76b;
+  --perla:#fbf3ff; --suave:#cfc2ea; --ok:#6ee7b7; --no:#ff8a9a;
+  --boton:linear-gradient(100deg,#7b4dff 0%,#ff3fa4 60%,#ff8a6b 100%);
+  --script:"Great Vibes","Brush Script MT",cursive;
+  --serif:"Cinzel","Times New Roman",serif;
+  --sans:"Montserrat",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{
+  margin:0;min-height:100vh;font-family:var(--sans);color:var(--perla);font-size:15px;
+  background:radial-gradient(120% 60% at 50% 0%,#3a1f8a 0%,var(--noche) 60%) fixed,var(--noche);
+  padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);
+}
+.envoltura{max-width:960px;margin:0 auto;padding:20px 16px 48px}
+header{text-align:center;padding:12px 0 18px}
+header small{font-family:var(--serif);letter-spacing:.3em;font-size:11px;color:var(--dorado);text-transform:uppercase}
+header h1{font-family:var(--script);font-weight:400;font-size:clamp(40px,10vw,56px);margin:2px 0 0;line-height:1.1;color:#ffd9f0;text-shadow:0 0 18px rgba(255,63,164,.45)}
+.caja{background:rgba(27,17,66,.82);border:1px solid var(--linea);border-radius:16px;padding:18px}
+.aviso{border-color:rgba(255,199,107,.45);color:#ffe7bd;font-size:14px;line-height:1.5;margin-bottom:16px}
+.aviso b{color:var(--dorado)}
+label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin:0 0 6px}
+input,select{
+  width:100%;font:inherit;color:var(--perla);background:rgba(18,10,46,.75);
+  border:1px solid var(--linea);border-radius:10px;padding:11px 12px;min-height:44px;
+}
+input:focus,select:focus{outline:2px solid var(--lavanda);outline-offset:1px}
+button{font:inherit;cursor:pointer;border:0;border-radius:999px;min-height:44px;padding:0 18px;color:#fff}
+.primario{background:var(--boton);font-weight:600;box-shadow:0 4px 18px rgba(255,63,164,.3)}
+.secundario{background:rgba(201,168,255,.14);color:var(--perla);border:1px solid var(--linea)}
+.chico{min-height:36px;padding:0 12px;font-size:13px}
+button:focus-visible{outline:2px solid var(--dorado);outline-offset:2px}
+button:disabled{opacity:.55;cursor:default}
+
+.entrar{max-width:360px;margin:40px auto 0;display:grid;gap:12px}
+.error{color:var(--no);font-size:14px;min-height:1.2em;margin:0}
+
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-bottom:18px}
+.cifra{background:rgba(27,17,66,.82);border:1px solid var(--linea);border-radius:14px;padding:10px 12px}
+.cifra span{display:block;line-height:1.3}
+.cifra b{display:block;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--dorado);line-height:1.1;font-variant-numeric:tabular-nums}
+.cifra span{font-size:12px;color:var(--suave);letter-spacing:.04em}
+.cifra.si b{color:var(--ok)} .cifra.no b{color:var(--no)}
+
+.pestanas{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto}
+.pestanas button{flex:1;padding:0 10px;font-size:13px;background:transparent;border:1px solid var(--linea);color:var(--suave);white-space:nowrap}
+.pestanas button[aria-selected="true"]{background:rgba(138,77,255,.35);color:#fff;border-color:var(--lavanda)}
+.barra{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:12px}
+.barra h2{font-family:var(--serif);font-weight:600;font-size:16px;letter-spacing:.12em;margin:0;color:var(--lavanda);text-transform:uppercase}
+.estado{font-size:12px;color:var(--suave)}
+
+.nuevo{display:grid;grid-template-columns:1fr 110px auto;gap:10px;align-items:end;margin-bottom:16px}
+@media (max-width:560px){ .nuevo{grid-template-columns:1fr 90px} .nuevo .crear{grid-column:1/-1} }
+.buscar{margin-bottom:12px}
+
+.lista{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.fila{background:rgba(18,10,46,.6);border:1px solid var(--linea);border-radius:12px;padding:12px 14px;display:grid;gap:8px}
+.fila-arriba{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.fila-nombre{font-weight:600;overflow-wrap:anywhere}
+.fila-dato{font-size:13px;color:var(--suave)}
+.fila-acciones{display:flex;gap:6px;flex-wrap:wrap}
+.etiqueta{font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.etiqueta.si{background:rgba(110,231,183,.15);color:var(--ok)}
+.etiqueta.no{background:rgba(255,138,154,.15);color:var(--no)}
+.etiqueta.pendiente{background:rgba(255,199,107,.14);color:var(--dorado)}
+.vacio{color:var(--suave);text-align:center;padding:26px 10px;font-size:14px}
+.copiado{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#fff;color:var(--noche);font-weight:600;border-radius:999px;padding:10px 18px;box-shadow:0 6px 24px rgba(0,0,0,.4)}
+</style>
+</head>
+<body>
+<div class="envoltura">
+  <header>
+    <small>Panel de invitados</small>
+    <h1>María Fernanda</h1>
+  </header>
+
+  <!-- Entrar con la clave -->
+  <form class="caja entrar" id="entrar" hidden>
+    <div>
+      <label for="clave">Clave del panel</label>
+      <input id="clave" type="password" autocomplete="current-password" required>
+    </div>
+    <button class="primario" type="submit">Entrar</button>
+    <p class="error" id="error-clave" role="alert"></p>
+  </form>
+
+  <main id="contenido" hidden>
+    <div class="caja aviso" id="sin-conexion" hidden>
+      <b>El panel todavía no está conectado a Google Sheets.</b>
+      Ya puedes crear enlaces, pero se guardan solo en este dispositivo. Las confirmaciones y canciones
+      aparecerán aquí cuando se conecte la hoja.
+    </div>
+
+    <section class="cifras" aria-label="Resumen">
+      <div class="cifra si"><b id="c-personas">0</b><span>personas confirmadas</span></div>
+      <div class="cifra no"><b id="c-no">0</b><span>no asistirán</span></div>
+      <div class="cifra"><b id="c-pendientes">0</b><span>invitados sin responder</span></div>
+      <div class="cifra"><b id="c-puestos">0</b><span>puestos entregados</span></div>
+      <div class="cifra"><b id="c-canciones">0</b><span>canciones sugeridas</span></div>
+    </section>
+
+    <div class="pestanas" role="tablist">
+      <button type="button" role="tab" aria-selected="true" aria-controls="p-invitados" id="t-invitados">Invitados y enlaces</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="p-confirmaciones" id="t-confirmaciones">Confirmaciones</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="p-canciones" id="t-canciones">Canciones</button>
+    </div>
+
+    <!-- Invitados -->
+    <section class="caja" role="tabpanel" id="p-invitados" aria-labelledby="t-invitados">
+      <div class="barra"><h2>Crear enlace</h2><span class="estado" id="estado"></span></div>
+      <form class="nuevo" id="nuevo">
+        <div>
+          <label for="n-nombre">Nombre en el pase</label>
+          <input id="n-nombre" type="text" placeholder="Ej. Familia Pérez" required autocomplete="off">
+        </div>
+        <div>
+          <label for="n-puestos">Puestos</label>
+          <select id="n-puestos"></select>
+        </div>
+        <button class="primario crear" type="submit">Crear enlace</button>
+      </form>
+      <input class="buscar" id="buscar" type="search" placeholder="Buscar invitado…" aria-label="Buscar invitado">
+      <ul class="lista" id="lista-invitados"></ul>
+    </section>
+
+    <!-- Confirmaciones -->
+    <section class="caja" role="tabpanel" id="p-confirmaciones" aria-labelledby="t-confirmaciones" hidden>
+      <div class="barra">
+        <h2>Confirmaciones</h2>
+        <button class="secundario chico" type="button" id="descargar">Descargar lista</button>
+      </div>
+      <ul class="lista" id="lista-confirmaciones"></ul>
+    </section>
+
+    <!-- Canciones -->
+    <section class="caja" role="tabpanel" id="p-canciones" aria-labelledby="t-canciones" hidden>
+      <div class="barra"><h2>Canciones sugeridas</h2></div>
+      <ul class="lista" id="lista-canciones"></ul>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  // Dirección de la aplicación web de Google Apps Script (la misma que en la invitación)
+  var SCRIPT_URL = "";
+  var INVITACION = "https://jadeinkinvitacionesdigitales-source.github.io/xv-maria-fernanda/";
+  var MAX_PUESTOS = 10;
+
+  var datos = { confirmaciones: [], canciones: [], invitados: [] };
+  var clave = leer("panel-clave") || "";
+
+  function leer(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function guardar(k, v){ try { localStorage.setItem(k, v); } catch(e){} }
+  function $(id){ return document.getElementById(id); }
+  function normal(s){ return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim(); }
+  function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function fecha(iso){
+    var d = new Date(iso); if (isNaN(d)) return "";
+    return d.toLocaleDateString("es-PA", { day:"numeric", month:"short" }) + " · " + d.toLocaleTimeString("es-PA", { hour:"numeric", minute:"2-digit" });
+  }
+  function nuevoId(){ return Math.random().toString(36).slice(2, 8); }
+  function enlace(inv){
+    return INVITACION + "?invitado=" + encodeURIComponent(inv.nombre) + "&puestos=" + inv.puestos + "&id=" + inv.id;
+  }
+  function plural(n){ return n + (n == 1 ? " puesto" : " puestos"); }
+  function aviso(texto){
+    var a = document.createElement("div"); a.className = "copiado"; a.setAttribute("role", "status"); a.textContent = texto;
+    document.body.appendChild(a); setTimeout(function(){ a.remove(); }, 1800);
+  }
+
+  // ---------- Conexión con Google Sheets ----------
+  function pedir(){
+    return fetch(SCRIPT_URL + "?clave=" + encodeURIComponent(clave), { cache: "no-store" }).then(function(r){ return r.json(); });
+  }
+  function enviar(obj){
+    obj.clave = clave;
+    return fetch(SCRIPT_URL, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(obj) })
+      .then(function(r){ return r.json(); });
+  }
+  function cargar(){
+    if (!SCRIPT_URL){
+      try { datos.invitados = JSON.parse(leer("panel-invitados") || "[]"); } catch(e){ datos.invitados = []; }
+      pintar(); return Promise.resolve();
+    }
+    $("estado").textContent = "Actualizando…";
+    return pedir().then(function(r){
+      if (!r.ok){ salir(); return; }
+      datos = r; $("estado").textContent = "Actualizado " + new Date().toLocaleTimeString("es-PA", { hour:"numeric", minute:"2-digit" });
+      pintar();
+    }).catch(function(){ $("estado").textContent = "Sin conexión. Reintenta en un momento."; });
+  }
+  function guardarLocal(){ if (!SCRIPT_URL) guardar("panel-invitados", JSON.stringify(datos.invitados)); }
+
+  // ---------- Entrar ----------
+  function mostrar(){
+    $("entrar").hidden = true; $("contenido").hidden = false;
+    $("sin-conexion").hidden = !!SCRIPT_URL;
+    cargar();
+  }
+  function salir(){
+    clave = ""; guardar("panel-clave", "");
+    $("contenido").hidden = true; $("entrar").hidden = false;
+    $("error-clave").textContent = "La clave no es correcta.";
+  }
+  $("entrar").addEventListener("submit", function(e){
+    e.preventDefault();
+    clave = $("clave").value.trim();
+    $("error-clave").textContent = "";
+    pedir().then(function(r){
+      if (!r.ok){ $("error-clave").textContent = "La clave no es correcta."; return; }
+      guardar("panel-clave", clave); datos = r; mostrar();
+    }).catch(function(){ $("error-clave").textContent = "No se pudo conectar. Revisa tu internet."; });
+  });
+
+  // ---------- Pestañas ----------
+  var pestanas = document.querySelectorAll('[role="tab"]');
+  pestanas.forEach(function(t){
+    t.addEventListener("click", function(){
+      pestanas.forEach(function(o){
+        var activa = o === t;
+        o.setAttribute("aria-selected", activa ? "true" : "false");
+        $(o.getAttribute("aria-controls")).hidden = !activa;
+      });
+    });
+  });
+
+  // ---------- Crear invitados ----------
+  for (var n = 1; n <= MAX_PUESTOS; n++){
+    var op = document.createElement("option"); op.textContent = n; $("n-puestos").appendChild(op);
+  }
+  $("n-puestos").value = "2";
+  $("nuevo").addEventListener("submit", function(e){
+    e.preventDefault();
+    var nombre = $("n-nombre").value.trim();
+    if (!nombre) return;
+    var inv = { id: nuevoId(), nombre: nombre, puestos: parseInt($("n-puestos").value, 10), creado: new Date().toISOString() };
+    datos.invitados.push(inv); guardarLocal(); pintar();
+    $("n-nombre").value = ""; $("n-nombre").focus();
+    copiar(enlace(inv), "Enlace creado y copiado");
+    if (SCRIPT_URL){
+      enviar({ tipo: "invitado", id: inv.id, nombre: inv.nombre, puestos: inv.puestos })
+        .then(function(r){ if (!r.ok) aviso("No se guardó en la hoja"); })
+        .catch(function(){ aviso("No se guardó en la hoja. Revisa tu internet."); });
+    }
+  });
+
+  function copiar(texto, mensaje){
+    var listo = function(){ aviso(mensaje || "Enlace copiado"); };
+    if (navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(texto).then(listo, function(){ copiarViejo(texto); listo(); });
+    } else { copiarViejo(texto); listo(); }
+  }
+  function copiarViejo(texto){
+    var t = document.createElement("textarea"); t.value = texto; t.style.position = "fixed"; t.style.opacity = "0";
+    document.body.appendChild(t); t.select(); try { document.execCommand("copy"); } catch(e){} t.remove();
+  }
+
+  // ---------- Relacionar confirmaciones con invitados ----------
+  function respuestaDe(inv){
+    var propias = datos.confirmaciones.filter(function(c){
+      return (c.id && String(c.id) === String(inv.id)) || (!c.id && normal(c.invitado || c.nombre) === normal(inv.nombre));
+    });
+    return propias.length ? propias[propias.length - 1] : null;
+  }
+  function asiste(c){ return /^s/i.test(normal(c.respuesta)); }
+
+  // ---------- Pintar ----------
+  function pintar(){
+    // Última respuesta de cada persona o invitado
+    var ultimas = {};
+    datos.confirmaciones.forEach(function(c){ ultimas[c.id ? "id:" + c.id : "n:" + normal(c.nombre)] = c; });
+    var finales = Object.keys(ultimas).map(function(k){ return ultimas[k]; });
+    var personas = 0, no = 0;
+    finales.forEach(function(c){ if (asiste(c)) personas += parseInt(c.personas, 10) || 0; else no++; });
+    var pendientes = datos.invitados.filter(function(i){ return !respuestaDe(i); }).length;
+    var puestos = datos.invitados.reduce(function(s, i){ return s + (parseInt(i.puestos, 10) || 0); }, 0);
+    $("c-personas").textContent = personas;
+    $("c-no").textContent = no;
+    $("c-pendientes").textContent = pendientes;
+    $("c-puestos").textContent = puestos;
+    $("c-canciones").textContent = datos.canciones.length;
+    pintarInvitados(); pintarConfirmaciones(); pintarCanciones();
+  }
+
+  function etiqueta(c){
+    if (!c) return '<span class="etiqueta pendiente">Pendiente</span>';
+    return asiste(c)
+      ? '<span class="etiqueta si">Confirmó ' + esc(c.personas) + '</span>'
+      : '<span class="etiqueta no">No asistirá</span>';
+  }
+
+  function pintarInvitados(){
+    var filtro = normal($("buscar").value);
+    var lista = datos.invitados.slice().reverse().filter(function(i){ return !filtro || normal(i.nombre).indexOf(filtro) >= 0; });
+    if (!datos.invitados.length){ $("lista-invitados").innerHTML = '<li class="vacio">Crea el primer enlace con el nombre y los puestos del invitado.</li>'; return; }
+    if (!lista.length){ $("lista-invitados").innerHTML = '<li class="vacio">No hay invitados con ese nombre.</li>'; return; }
+    $("lista-invitados").innerHTML = lista.map(function(i){
+      return '<li class="fila" data-id="' + esc(i.id) + '">' +
+        '<div class="fila-arriba"><span class="fila-nombre">' + esc(i.nombre) + '</span>' + etiqueta(respuestaDe(i)) + '</div>' +
+        '<span class="fila-dato">' + plural(i.puestos) + '</span>' +
+        '<div class="fila-acciones">' +
+          '<button class="secundario chico" type="button" data-accion="copiar">Copiar enlace</button>' +
+          '<button class="secundario chico" type="button" data-accion="whatsapp">Enviar por WhatsApp</button>' +
+          '<button class="secundario chico" type="button" data-accion="abrir">Ver pase</button>' +
+          '<button class="secundario chico" type="button" data-accion="borrar" aria-label="Borrar a ' + esc(i.nombre) + '">Borrar</button>' +
+        '</div></li>';
+    }).join("");
+  }
+  $("buscar").addEventListener("input", pintarInvitados);
+  $("lista-invitados").addEventListener("click", function(e){
+    var b = e.target.closest("button[data-accion]"); if (!b) return;
+    var id = b.closest(".fila").dataset.id;
+    var inv = datos.invitados.filter(function(i){ return String(i.id) === id; })[0]; if (!inv) return;
+    var url = enlace(inv);
+    if (b.dataset.accion === "copiar") copiar(url);
+    else if (b.dataset.accion === "abrir") window.open(url, "_blank", "noopener");
+    else if (b.dataset.accion === "whatsapp"){
+      var texto = "¡Hola, " + inv.nombre + "! Tienes " + plural(inv.puestos) + " para los XV de María Fernanda, " +
+        "una noche en Nueva York 🗽✨\nSábado 30 de enero de 2027 · 9:00 p.m.\nAquí está tu invitación:\n" + url;
+      window.open("https://wa.me/?text=" + encodeURIComponent(texto), "_blank", "noopener");
+    } else if (b.dataset.accion === "borrar"){
+      if (!confirm("¿Borrar a " + inv.nombre + " de la lista? Su enlace seguirá funcionando.")) return;
+      datos.invitados = datos.invitados.filter(function(i){ return i !== inv; }); guardarLocal(); pintar();
+      if (SCRIPT_URL) enviar({ tipo: "borrar-invitado", id: inv.id }).catch(function(){ aviso("No se borró de la hoja"); });
+    }
+  });
+
+  function pintarConfirmaciones(){
+    var lista = datos.confirmaciones.slice().reverse();
+    if (!lista.length){ $("lista-confirmaciones").innerHTML = '<li class="vacio">Aún no hay confirmaciones.</li>'; return; }
+    $("lista-confirmaciones").innerHTML = lista.map(function(c){
+      var pase = c.invitado && normal(c.invitado) !== normal(c.nombre) ? " · Pase: " + esc(c.invitado) : "";
+      return '<li class="fila"><div class="fila-arriba"><span class="fila-nombre">' + esc(c.nombre) + '</span>' + etiqueta(c) + '</div>' +
+        '<span class="fila-dato">' + esc(fecha(c.fecha)) + pase + (c.puestos ? " · " + plural(c.puestos) + " en el pase" : "") + '</span></li>';
+    }).join("");
+  }
+
+  function pintarCanciones(){
+    var lista = datos.canciones.slice().reverse();
+    if (!lista.length){ $("lista-canciones").innerHTML = '<li class="vacio">Aún no hay canciones sugeridas.</li>'; return; }
+    $("lista-canciones").innerHTML = lista.map(function(c){
+      return '<li class="fila"><span class="fila-nombre">' + esc(c.cancion) + '</span>' +
+        '<span class="fila-dato">' + esc(c.nombre ? c.nombre + " · " : "") + esc(fecha(c.fecha)) + '</span></li>';
+    }).join("");
+  }
+
+  // ---------- Descargar confirmaciones (CSV para Excel) ----------
+  $("descargar").addEventListener("click", function(){
+    var filas = [["Fecha", "Nombre", "Personas", "Respuesta", "Pase", "Puestos"]].concat(datos.confirmaciones.map(function(c){
+      return [fecha(c.fecha), c.nombre, c.personas, c.respuesta, c.invitado, c.puestos];
+    }));
+    var csv = "\ufeff" + filas.map(function(f){ return f.map(function(v){ return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; }).join(";"); }).join("\r\n");
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+    a.download = "confirmaciones-xv-maria-fernanda.csv"; a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  // Actualiza solo cada minuto mientras el panel está abierto
+  setInterval(function(){ if (SCRIPT_URL && clave && !document.hidden) cargar(); }, 60000);
+
+  if (!SCRIPT_URL || clave) mostrar();
+  else $("entrar").hidden = false;
+})();
+</script>
+</body>
+</html>

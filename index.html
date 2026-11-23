@@ -479,17 +479,31 @@ input::placeholder{color:rgba(207,194,234,.55)}
   }
   tic(); setInterval(tic, 1000);
 
+  // ---------- Panel: confirmaciones y canciones se guardan también en Google Sheets ----------
+  var PANEL_URL = "";
+  function alPanel(datos){
+    if (!PANEL_URL) return;
+    var cuerpo = JSON.stringify(datos);
+    try { if (navigator.sendBeacon && navigator.sendBeacon(PANEL_URL, cuerpo)) return; } catch(e){}
+    fetch(PANEL_URL, { method: "POST", mode: "no-cors", keepalive: true, body: cuerpo }).catch(function(){});
+  }
+
+  // ---------- Pase personal: nombre y puestos desde el enlace del panel ----------
+  // Ejemplo de enlace: ...?invitado=Familia%20Pérez&puestos=4&id=abc123
+  var params = new URLSearchParams(location.search);
+  var invId = (params.get("id") || "").trim();
+  var invNombre = (params.get("invitado") || params.get("nombre") || "").trim();
+
   // ---------- Enlaces de WhatsApp ----------
   function wa(texto){ return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto); }
   var cancion = document.getElementById("cancion");
   var btnCancion = document.getElementById("enviar-cancion");
   function actCancion(){ btnCancion.href = wa("Hola, para la playlist de los XV de María Fernanda sugiero: " + (cancion.value.trim() || "…")); }
   cancion.addEventListener("input", actCancion); actCancion();
+  btnCancion.addEventListener("click", function(){
+    if (cancion.value.trim()) alPanel({ tipo: "cancion", cancion: cancion.value.trim(), nombre: invNombre });
+  });
 
-  // ---------- Pase personal: nombre y puestos desde el enlace del panel ----------
-  // Ejemplo de enlace: ...?invitado=Familia%20Pérez&puestos=4
-  var params = new URLSearchParams(location.search);
-  var invNombre = (params.get("invitado") || params.get("nombre") || "").trim();
   var invPuestos = parseInt(params.get("puestos"), 10);
   if (!(invPuestos > 0)) invPuestos = 0;
   if (invNombre) document.getElementById("boleto-nombre").textContent = invNombre;
@@ -519,6 +533,8 @@ input::placeholder{color:rgba(207,194,234,.55)}
   btnWa.addEventListener("click", function(e){
     if (!rNombre.value.trim()){ e.preventDefault(); aviso.textContent = "Escribe tu nombre para confirmar."; rNombre.focus(); return; }
     aviso.textContent = "";
+    alPanel({ tipo: "confirmacion", id: invId, nombre: rNombre.value.trim(), personas: rPersonas.value,
+      respuesta: form.querySelector('input[name="asiste"]:checked').value, invitado: invNombre, puestos: invPuestos || "" });
   });
 
   // ---------- Música ----------
